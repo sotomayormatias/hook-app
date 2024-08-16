@@ -1,11 +1,15 @@
 body {
-    padding: 20px;
+  padding: 20px;
 }
 
 button {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .complete-todo {
-    background-color: greenyellow;
-  }
+  background-color: greenyellow;
+}
+
+a {
+  margin-right: 5px;
+}

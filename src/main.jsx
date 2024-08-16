@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
-import { HooksApp } from './HooksApp'
+import { Mainapp } from './09-useContext/Mainapp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-    <HooksApp />
-  // </React.StrictMode>
+  <BrowserRouter>
+    {/* <React.StrictMode> */}
+      <Mainapp />
+    {/* </React.StrictMode> */}
+  </BrowserRouter>
 )
