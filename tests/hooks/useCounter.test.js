@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react'
+import { act, renderHook } from '@testing-library/react'
 import { useCounter } from '../../src/hooks/useCounter'
 
 describe('Tests on userCounter', () => { 
@@ -19,6 +19,37 @@ describe('Tests on userCounter', () => {
     expect(counter).toBe(100);
   });
 
-  
+  test('should increment one on counter when plusOne', () => { 
+    const { result } = renderHook(() => useCounter(100));
+    const { plusOne } = result.current;
 
+    act(() => {
+      plusOne();
+    });
+
+    expect(result.current.counter).toBe(101);
+   });
+
+   test('should decrement one on counter when lessOne', () => { 
+    const { result } = renderHook(() => useCounter(100));
+    const { lessOne } = result.current;
+
+    act(() => {
+      lessOne();
+    });
+
+    expect(result.current.counter).toBe(99);
+   });
+
+   test('should reset counter when reset', () => { 
+    const { result } = renderHook(() => useCounter(100));
+    const { plusOne, reset } = result.current;
+
+    act(() => {
+      plusOne();
+      reset();
+    });
+
+    expect(result.current.counter).toBe(100);
+   });
  })
