@@ -6,7 +6,7 @@ export const MultipleCustomHooks = () => {
     const {counter, plusOne, lessOne, reset} = useCounter(1);
     const url = `https://api.breakingbadquotes.xyz/v1/quotes/${counter}`;
 
-    const {data, isLoading, hasEror} = useFetch(url);
+    const {data, isLoading, hasError} = useFetch(url);
 
     return (
         <>
