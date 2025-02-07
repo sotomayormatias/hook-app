@@ -23,7 +23,10 @@ export const TodoAdd = ({handleAction}) => {
   }
 
   return (
-    <form onSubmit={onformSubmit}>
+    <form
+      onSubmit={onformSubmit}
+      role='form'
+    >
       <input
         type="text"
         placeholder='que hacemos?'
